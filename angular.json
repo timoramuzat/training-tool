@@ -17,7 +17,7 @@
               "socket.io-client",
               "jquery"
               ],
-            "outputPath": "dist",
+            "outputPath": "dist/training-tool",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
