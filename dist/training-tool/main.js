@@ -1427,15 +1427,15 @@ TokenInterceptorService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
 
 /***/ }),
 
-/***/ 8223:
-/*!***********************************************!*\
-  !*** ./src/app/services/websocket.service.ts ***!
-  \***********************************************/
+/***/ 2772:
+/*!*****************************************!*\
+  !*** ./src/app/services/web.service.ts ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "WebsocketService": () => (/* binding */ WebsocketService)
+/* harmony export */   "WebService": () => (/* binding */ WebService)
 /* harmony export */ });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 2378);
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! socket.io-client */ 4769);
@@ -1443,7 +1443,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class WebsocketService {
+class WebService {
   constructor() {
     this.url = "http://localhost:3000";
     this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)(this.url);
@@ -1459,12 +1459,12 @@ class WebsocketService {
     this.socket.emit(eventName, data);
   }
 }
-WebsocketService.ɵfac = function WebsocketService_Factory(t) {
-  return new (t || WebsocketService)();
+WebService.ɵfac = function WebService_Factory(t) {
+  return new (t || WebService)();
 };
-WebsocketService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-  token: WebsocketService,
-  factory: WebsocketService.ɵfac,
+WebService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+  token: WebService,
+  factory: WebService.ɵfac,
   providedIn: 'root'
 });
 
@@ -1483,7 +1483,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var src_app_services_student_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services/student.service */ 4339);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 124);
-/* harmony import */ var src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/websocket.service */ 8223);
+/* harmony import */ var src_app_services_web_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/web.service */ 2772);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../navigation/navigation.component */ 2217);
 /* harmony import */ var _loading_loading_loading_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../loading/loading/loading.component */ 1515);
@@ -1628,7 +1628,7 @@ class Home {
   }
 }
 Home.ɵfac = function Home_Factory(t) {
-  return new (t || Home)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_services_student_service__WEBPACK_IMPORTED_MODULE_0__.StudentService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_1__.WebsocketService));
+  return new (t || Home)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_services_student_service__WEBPACK_IMPORTED_MODULE_0__.StudentService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_services_web_service__WEBPACK_IMPORTED_MODULE_1__.WebService));
 };
 Home.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: Home,

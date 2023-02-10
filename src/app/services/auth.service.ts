@@ -14,6 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   registerStudent(body: any) {
+   // api
     return this.http.post('http://127.0.0.1:3000/registerstudent' +
       '', body, {
       observe: 'body',

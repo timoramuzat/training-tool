@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
-import { WebsocketService } from 'src/app/services/websocket.service';
+import { WebService } from 'src/app/services/web.service';
 
 @Component({
   selector: 'app-studenthome',
@@ -13,7 +13,7 @@ export class Home implements OnInit {
   allquiz: any;
   public loading: any = true;
   public empty: any = true;
-  constructor(private studentService: StudentService, private router: Router, private webSocketService: WebsocketService) { }
+  constructor(private studentService: StudentService, private router: Router, private webSocketService: WebService) { }
 
   ngOnInit(): void {
     this.loading = true
