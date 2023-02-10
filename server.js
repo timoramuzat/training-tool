@@ -13,6 +13,7 @@ var studentRoutes = require('./routes/student')
 // some dependency
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(cors())
 
 // {
