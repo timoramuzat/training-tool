@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "concurrently \"ng build\" \"node api/server.js\"",
+    "build": "ng build",
     "dev": "concurrently \"npm run build\" \"node server.js\"",
     "test": "ng test",
     "lint": "ng lint",
