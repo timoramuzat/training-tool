@@ -5,8 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "concurrently \"ng serve\" \"node api/server.js\"",
-    "dev": "concurrently \"ng serve\" \"node server.js\"",
+    "build": "concurrently \"npm run build\" \"node api/server.js\"",
+    "dev": "concurrently \"npm run build\" \"node server.js\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
