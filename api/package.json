@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: np test\" && exit 1",
-    "serve": "node server.js --legacy-peer-deps",
-    "dev": "nodemon server.js --legacy-peer-deps",
-    "p": "nodemon p.js--legacy-peer-deps"
+    "serve": "node server.js",
+    "dev": "nodemon server.js",
+    "p": "nodemon p.js"
   },
   "author": "Jesper Simon",
   "license": "FREE",
