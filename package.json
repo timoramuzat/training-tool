@@ -8,8 +8,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "concurrently \"ng build\" \"node api/server.js --legacy-peer-deps\",\"",
-    "dev": "concurrently \"npm run build\" \"node server.js --legacy-peer-deps\",\"",
+    "build": "concurrently \"ng build\" \"node api/server.js\"",
+    "dev": "concurrently \"npm run build\" \"node server.js\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
