@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 3000
 
 
 // all routes
-var apiRoutes = require('./routes/api')
-var teacherRoutes = require('./routes/teacher')
-var studentRoutes = require('./routes/student')
+var apiRoutes = require('api/routes/api')
+var teacherRoutes = require('api/routes/teacher')
+var studentRoutes = require('api/routes/student')
 
 // some dependency
 app.use(express.urlencoded({ extended: true }));
