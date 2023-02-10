@@ -7,9 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "concurrently \"ng build\" \"node api/server.js\"",
-    "dev": "concurrently \"npm run build\" \"node server.js\"",
+    "start": "node api/server.js",
+    "build": "concurrently \"ng build\" \"npm run start\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
