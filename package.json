@@ -2,6 +2,7 @@
   "name": "quiz",
   "author": "Jesper Simon",
   "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "client-install": "npm install",
