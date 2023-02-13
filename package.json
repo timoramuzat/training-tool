@@ -6,7 +6,7 @@
     "ng": "ng",
     "ng serve": "ng serve && npm run start",
     "start": "node api/server.js",
-    "build": "ng build && npm run start",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
