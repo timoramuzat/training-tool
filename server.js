@@ -70,5 +70,5 @@ app.use('/teacher', teacherRoutes)
 
 // for debugging
 server.listen(port, () => {
-    console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port ${port});
 })
