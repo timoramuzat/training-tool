@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "ng serve": "ng serve && npm run start",
-    "start": "ng build && node api/server.js",
+    "start": "pm2 start server.js --name \\\"web-app\\\" --watch",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
