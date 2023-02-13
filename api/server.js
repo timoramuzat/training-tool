@@ -1,8 +1,10 @@
+
+
 const express = require('express')
 const app = express()
 var cors = require('cors')
 // var bodyParser = require('body-parser')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 
 // all routes
@@ -44,10 +46,12 @@ var io = require('socket.io')(server,
         }
     });
 app.set('io', io);
+
+
 io.on('connection', socket => {
 
     console.log("New connection succesfully received!");
-    socket.emit("Test", "Stegaware");
+
 
 });
 
@@ -68,5 +72,3 @@ app.use('/teacher', teacherRoutes)
 server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 })
-
-

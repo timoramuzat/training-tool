@@ -2,12 +2,9 @@
   "name": "backend",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: np test\" && exit 1",
-    "serve": "node server.js",
-    "dev": "nodemon server.js",
-    "p": "nodemon p.js"
+    "start": "node server.js"
   },
   "author": "Jesper Simon",
   "license": "FREE",
@@ -24,7 +21,9 @@
     "mongodb": "^3.7.3",
     "mongoose": "^6.9.1",
     "multer": "^1.4.5-lts.1",
+    "netlify-lambda": "^1.6.3",
     "nodemailer": "^6.9.1",
+    "serverless-http": "^3.1.1",
     "socket.io": "^4.6.0"
   },
   "devDependencies": {
