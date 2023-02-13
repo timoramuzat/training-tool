@@ -48,7 +48,6 @@ var io = require('socket.io')(server,
 app.set('io', io);
 
 
-
 io.on('connection', socket => {
 
     console.log("New connection succesfully received!");
@@ -56,6 +55,11 @@ io.on('connection', socket => {
 
 });
 
+
+// for testing purpose
+app.get('/', (req, res) => {
+    res.send("Stegaware server database")
+})
 
 
 // use all routes
