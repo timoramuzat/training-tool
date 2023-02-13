@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+
+    <img class="logo" src="./assets/img/stegaware_logo.png" />
+    <div class="header-menu">
+      <a   [routerLink]="['/student/home']"  class="nav-link"><span class="ec ec-books"></span> Quizzes</a>
+     <a   [routerLink]="['/student/feedback']" class="nav-link"><span class="ec ec-speech-balloon"></span> Feedback</a>
+    </div>
+    <div class="header-icons">
+      <a   [routerLink]="['/student/home']"  class="nav-link" ><i class="fa-solid fa-user"></i> {{username}}</a>
+      <a [routerLink]="['/']" class="nav-link" (click)="logoutuser()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

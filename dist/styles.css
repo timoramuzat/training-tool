@@ -1,0 +1,38 @@
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css?ngGlobalStyle ***!
+  \**********************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap);
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css?ngGlobalStyle (1) ***!
+  \**************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap);
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css?ngGlobalStyle (2) ***!
+  \**************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.cdnfonts.com/css/dm-sans);
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css?ngGlobalStyle (3) ***!
+  \**************************************************************************************************************************************************************************************************************************/
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+body {
+  font-family: var(--body-font);
+}
+:root {
+  --body-font: "DM Sans", sans-serif;
+  --italic-font: "EB Garamond", serif;
+}
+
+
+/*# sourceMappingURL=styles.css.map*/
