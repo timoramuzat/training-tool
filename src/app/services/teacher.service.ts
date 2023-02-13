@@ -10,7 +10,7 @@ export class TeacherService {
   private delete:any;
   public avail: boolean = false;
   public msg: string = "";
-  private baseUri: string = "http://localhost:3000/teacher/";
+  private baseUri: string = process.env.BACKEND_URL+'/teacher';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 

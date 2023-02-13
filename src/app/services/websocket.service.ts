@@ -7,7 +7,7 @@ import {io} from 'socket.io-client';
 export class WebsocketService {
 
   socket:any;
-  readonly url:string ="http://localhost:3000";
+  readonly url:string = process.env.BACKEND_URL;
   constructor() {
     this.socket = io(this.url);
   }

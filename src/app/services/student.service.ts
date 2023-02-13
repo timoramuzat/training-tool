@@ -14,7 +14,7 @@ export class StudentService {
 
   private userid: any;
   public msg: string = "";
-  private baseUri: string = "http://localhost:3000/student/";
+  private baseUri: string = process.env.BACKEND_URL+'/student';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 

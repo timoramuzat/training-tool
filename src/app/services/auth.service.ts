@@ -9,27 +9,26 @@ export class AuthService {
 
   public avail: boolean = false;
   public msg: string = "";
-  private baseUri: string = process.env.BACKEND_PORT || 3000;
+  private baseUri: string = process.env.BACKEND_URL;
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
-  registerStudent(body: any) {
-    return this.http.post('http://127.0.0.1:3000/registerstudent' +
-      '', body, {
-      observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    });
+  registerStudent(body: any)
+  { return this.http.post(process.env.BACKEND_URL+'/registerstudent', body,
+      { observe: 'body',
+        headers: new HttpHeaders().append('Content-Type', 'application/json') });
   }
-
   registerTeacher(body: any) {
-    return this.http.post('http://127.0.0.1:3000/registerteacher', body, {
+    return this.http.post(process.env.BACKEND_URL+'/registerteacher', body,
+        {
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });
   }
 
   login(body: any) {
-    return this.http.post('http://127.0.0.1:3000/login', body, {
+       return this.http.post(process.env.BACKEND_URL+'/login', body,
+          {
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });
@@ -57,19 +56,5 @@ export class AuthService {
 
   check() {
     return this.http.get(this.baseUri + "/check", { headers: this.headers });
-  }
-
-  testdone(body: any) {
-    return this.http.post('http://127.0.0.1:3000/testdone', body, {
-      observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    });
-  }
-
-  testblock() {
-    return this.http.post('http://127.0.0.1:3000/testblock', {
-      observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    });
   }
 }

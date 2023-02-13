@@ -7,7 +7,7 @@ import {io} from 'socket.io-client';
 export class WebService {
 
   socket:any;
-  readonly url:string  = process.env.BACKEND_PORT;
+  readonly url:string  = process.env.BACKEND_URL;
   constructor() {
     this.socket = io(this.url);
   }

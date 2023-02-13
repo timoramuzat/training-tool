@@ -1159,7 +1159,7 @@ class AuthService {
     this.router = router;
     this.avail = false;
     this.msg = "";
-    this.baseUri = "http://localhost:3000";
+    this.baseUri = process.env.BACKEND_PORT;
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().set('Content-Type', 'application/json');
   }
   registerStudent(body) {
