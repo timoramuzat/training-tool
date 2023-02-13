@@ -1,5 +1,6 @@
 /node_modules/
 /.angular/
+.env
 
 # Local Netlify folder
 .netlify
