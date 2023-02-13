@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 var cors = require('cors')
 // var bodyParser = require('body-parser')
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
 
 // all routes
