@@ -20,18 +20,18 @@ import { QuizComponent } from './student/quiz/quiz.component';
 
 const routes: Routes = [
   // root
-  { path: 'https://web-production-4e65.up.railway.app', component: Student }, // Main page
+  { path: '', component: Student }, // Main page
   // login register
-  { path: 'https://web-production-4e65.up.railway.app/teacher', component: Teacher},
-  { path: 'https://web-production-4e65.up.railway.app/student', component: Student },
-  { path: 'https://web-production-4e65.up.railway.app/teacher/home', component: HomeComponent, canActivate: [TeacherGuard] },
-  { path: 'https://web-production-4e65.up.railway.app/teacher/createquiz', component: CreatequizComponent, canActivate: [TeacherGuard] },
+  { path: 'teacher', component: Teacher},
+  { path: 'student', component: Student },
+  { path: 'teacher/home', component: HomeComponent, canActivate: [TeacherGuard] },
+  { path: 'teacher/createquiz', component: CreatequizComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/uploadquiz', component: UploadquizComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/allstudents', component: AllstudentsComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/addquestion', component: AddquestionComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/questions', component: QuestionsComponent, canActivate: [TeacherGuard] },
   // student
-  { path: 'https://web-production-4e65.up.railway.app/student/home', component: Home, canActivate: [StudentGuard] },
+  { path: 'student/home', component: Home, canActivate: [StudentGuard] },
   { path: 'student/playquiz', component: QuizComponent, canActivate: [StudentGuard]},
   // error
   { path: 'error', component: ServerComponent },
