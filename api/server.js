@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 var cors = require('cors')
 // var bodyParser = require('body-parser')
-const PORT = process.env.PORT || 8080
+const PORT = process.env.BACKEND_PORT || 3000
 
 
 // all routes
@@ -69,6 +69,6 @@ app.use('/teacher', teacherRoutes)
 
 
 // for debugging
-server.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
+server.listen(BACKEND_PORT, () => {
+    console.log(`Listening on port ${BACKEND_PORT}`);
 })
