@@ -69,6 +69,6 @@ app.use('/teacher', teacherRoutes)
 
 
 // for debugging
-server.listen(BACKEND_PORT, () => {
-    console.log(`Listening on port ${BACKEND_PORT}`);
+server.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 })
