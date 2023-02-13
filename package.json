@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "client-install": "npm install --prefix client",
+    "client-install": "npm install",
     "server": "node api/server.js",
-    "client": "npm start --prefix client",
+    "client": "npm start",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "build": "ng build",
     "test": "ng test",
