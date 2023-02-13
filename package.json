@@ -8,7 +8,7 @@
     "client-install": "npm install",
     "server": "node api/server.js",
     "client": "node server.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run client",
     "startdev": "concurrently \"ng serve\" \"npm run server\"",
     "build": "ng build",
     "test": "ng test",
