@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "run build",
+    "build": "npm run start",
     "start": "node server.js"
   },
   "author": "Jesper Simon",
