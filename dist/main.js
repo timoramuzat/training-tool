@@ -47,22 +47,22 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
 // root
 {
-  path: '',
+  path: 'https://web-production-4e65.up.railway.app',
   component: _login_student_student_component__WEBPACK_IMPORTED_MODULE_0__.Student
 },
 // login register
 {
-  path: 'teacher',
+  path: 'https://web-production-4e65.up.railway.app/teacher',
   component: _login_teacher_teacher_component__WEBPACK_IMPORTED_MODULE_1__.Teacher
 }, {
-  path: 'student',
+  path: 'https://web-production-4e65.up.railway.app/student',
   component: _login_student_student_component__WEBPACK_IMPORTED_MODULE_0__.Student
 }, {
-  path: 'teacher/home',
+  path: 'https://web-production-4e65.up.railway.app/teacher/home',
   component: _teacher_home_home_component__WEBPACK_IMPORTED_MODULE_4__.HomeComponent,
   canActivate: [_teacher_teacher_guard__WEBPACK_IMPORTED_MODULE_3__.TeacherGuard]
 }, {
-  path: 'teacher/createquiz',
+  path: 'https://web-production-4e65.up.railway.app/teacher/createquiz',
   component: _teacher_createquiz_createquiz_component__WEBPACK_IMPORTED_MODULE_5__.CreatequizComponent,
   canActivate: [_teacher_teacher_guard__WEBPACK_IMPORTED_MODULE_3__.TeacherGuard]
 }, {
@@ -84,7 +84,7 @@ const routes = [
 },
 // student
 {
-  path: 'student/home',
+  path: 'https://web-production-4e65.up.railway.app/student/home',
   component: _student_home_home_component__WEBPACK_IMPORTED_MODULE_10__.Home,
   canActivate: [_student_student_guard__WEBPACK_IMPORTED_MODULE_2__.StudentGuard]
 }, {
