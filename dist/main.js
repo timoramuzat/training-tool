@@ -1159,23 +1159,23 @@ class AuthService {
     this.router = router;
     this.avail = false;
     this.msg = "";
-    this.baseUri = process.env.BACKEND_PORT;
+    this.baseUri = process.env.BACKEND_URL;
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().set('Content-Type', 'application/json');
   }
   registerStudent(body) {
-    return this.http.post('http://127.0.0.1:3000/registerstudent' + '', body, {
+    return this.http.post(process.env.BACKEND_URL + '/registerstudent', body, {
       observe: 'body',
       headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().append('Content-Type', 'application/json')
     });
   }
   registerTeacher(body) {
-    return this.http.post('http://127.0.0.1:3000/registerteacher', body, {
+    return this.http.post(process.env.BACKEND_URL + '/registerteacher', body, {
       observe: 'body',
       headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().append('Content-Type', 'application/json')
     });
   }
   login(body) {
-    return this.http.post('http://127.0.0.1:3000/login', body, {
+    return this.http.post(process.env.BACKEND_URL + '/login', body, {
       observe: 'body',
       headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().append('Content-Type', 'application/json')
     });
@@ -1196,18 +1196,6 @@ class AuthService {
   check() {
     return this.http.get(this.baseUri + "/check", {
       headers: this.headers
-    });
-  }
-  testdone(body) {
-    return this.http.post('http://127.0.0.1:3000/testdone', body, {
-      observe: 'body',
-      headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().append('Content-Type', 'application/json')
-    });
-  }
-  testblock() {
-    return this.http.post('http://127.0.0.1:3000/testblock', {
-      observe: 'body',
-      headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().append('Content-Type', 'application/json')
     });
   }
 }
@@ -1245,7 +1233,7 @@ class StudentService {
     this.router = router;
     this.avail = false;
     this.msg = "";
-    this.baseUri = "http://localhost:3000/student/";
+    this.baseUri = process.env.BACKEND_URL + '/student';
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().set('Content-Type', 'application/json');
   }
   getAllQuiz() {
@@ -1311,7 +1299,7 @@ class TeacherService {
     this.router = router;
     this.avail = false;
     this.msg = "";
-    this.baseUri = "http://localhost:3000/teacher/";
+    this.baseUri = process.env.BACKEND_URL + '/teacher';
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().set('Content-Type', 'application/json');
   }
   createQuiz(body) {
@@ -1445,7 +1433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class WebsocketService {
   constructor() {
-    this.url = "http://localhost:3000";
+    this.url = process.env.BACKEND_URL;
     this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)(this.url);
   }
   listen(eventName) {

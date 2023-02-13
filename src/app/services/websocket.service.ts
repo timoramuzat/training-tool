@@ -7,7 +7,7 @@ import {io} from 'socket.io-client';
 export class WebsocketService {
 
   socket:any;
-  readonly url:string = process.env.BACKEND_URL;
+  readonly url:string  = "https://training-tool-backend-production.up.railway.app";
   constructor() {
     this.socket = io(this.url);
   }

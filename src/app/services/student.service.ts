@@ -14,7 +14,7 @@ export class StudentService {
 
   private userid: any;
   public msg: string = "";
-  private baseUri: string = process.env.BACKEND_URL+'/student';
+  private baseUri: string = "https://training-tool-backend-production.up.railway.app/student/";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 

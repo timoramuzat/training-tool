@@ -16,6 +16,6 @@
       "es2018",
       "dom"
     ],
-    "useDefineForClassFields": false, "types" : ["node"]
+    "useDefineForClassFields": false
   }
 }
