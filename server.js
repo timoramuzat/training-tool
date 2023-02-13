@@ -56,11 +56,6 @@ io.on('connection', socket => {
 });
 
 
-// for testing purpose
-app.get('/', (req, res) => {
-    res.send("Stegaware server database")
-})
-
 
 // use all routes
 app.use('/', apiRoutes)
