@@ -5,6 +5,6 @@ const app = express();
 const port = process.env.PORT
 
 app.use(express.static(__dirname + '/dist'));
-app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
+app.get('*', (req, res) => { console.log(`sending...`); res.sendFile(path.join(__dirname, 'index.html')); });
 const server = http.createServer(app);
 server.listen(port, () => console.log(`App running on port ${port}`));
