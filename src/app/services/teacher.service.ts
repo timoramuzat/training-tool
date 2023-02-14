@@ -10,7 +10,7 @@ export class TeacherService {
   private delete:any;
   public avail: boolean = false;
   public msg: string = "";
-  private baseUri: string = "https://training-tool-backend-production.up.railway.app/";
+  private baseUri: string = "https://training-tool-backend-production.up.railway.app/teacher/";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
