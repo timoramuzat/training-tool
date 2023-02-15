@@ -10,7 +10,7 @@
     "client": "node server.js",
     "start": "npm run client",
     "startdev": "concurrently \"ng serve\" \"npm run server\"",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
