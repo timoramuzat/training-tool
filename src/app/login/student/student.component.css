@@ -213,12 +213,11 @@ a:hover
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
-
-
+  background: #DBDDDD;
 }
 
 .btn:hover {
-  background-color: #020b18;
+  background-color: #272F32;
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
 }
@@ -404,9 +403,12 @@ a:hover
   z-index: 1;
 }
 
-.containerr.sign-up-mode .right-panel .image,
+.containerr.sign-up-mode .right-panel .image {
+  transform: translateX(-300px);
+}
+
 .containerr.sign-up-mode .right-panel .content {
-  transform: translateX(0%);
+  transform: translateX(-100px);
 }
 
 .containerr.sign-up-mode .left-panel {

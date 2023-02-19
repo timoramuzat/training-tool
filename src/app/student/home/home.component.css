@@ -1,8 +1,10 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding-right: 5px;
   box-sizing: border-box;
+  border-collapse:separate;
+  border-spacing: 50px 5px;
 }
 
 body,
@@ -202,23 +204,26 @@ a:hover
 
 
 .btn {
-  width: 150px;
+  width: 70px;
   border: none;
   outline: none;
-  height: 49px;
+  height: 40px;
   border-radius: 49px;
   color: #fff;
+  background: #DBDDDD;
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+}
 
-
+.btn-primary {
+  background: #c0c0c0;
 }
 
 .btn:hover {
-  background-color: #020b18;
+  background-color: #272F32;
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
 }
@@ -552,3 +557,8 @@ a:hover
   width: 300px;
 }
 
+.title {
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}

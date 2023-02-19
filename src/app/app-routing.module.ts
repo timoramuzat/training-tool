@@ -17,6 +17,7 @@ import { Home } from './student/home/home.component';
 import { NotfoundErrorComponent } from './error/404/404.component';
 import { ServerComponent } from './error/server/server.component';
 import { QuizComponent } from './student/quiz/quiz.component';
+import { FeedbackComponent } from './student/feedback/feedback.component';
 
 const routes: Routes = [
   // root
@@ -24,6 +25,7 @@ const routes: Routes = [
   // login register
   { path: 'teacher', component: Teacher},
   { path: 'student', component: Student },
+  // teacher
   { path: 'teacher/home', component: HomeComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/createquiz', component: CreatequizComponent, canActivate: [TeacherGuard] },
   { path: 'teacher/uploadquiz', component: UploadquizComponent, canActivate: [TeacherGuard] },
@@ -33,6 +35,7 @@ const routes: Routes = [
   // student
   { path: 'student/home', component: Home, canActivate: [StudentGuard] },
   { path: 'student/playquiz', component: QuizComponent, canActivate: [StudentGuard]},
+  { path: 'student/feedback', component: FeedbackComponent, canActivate: [StudentGuard]},
   // error
   { path: 'error', component: ServerComponent },
   { path: '**', component: NotfoundErrorComponent },

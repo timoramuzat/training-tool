@@ -55,6 +55,27 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/teacher/questions']);
   }
 
+  add(quiz) {
+    this.teacherService.setQuizId(quiz._id);
+    this.router.navigate(['/teacher/addquestion']);
+  }
+
+  download(quiz) {
+      // console.log("upload");
+      // console.log(quiz);
+      // console.log(quiz._id);
+    this.teacherService.downloadquiz(quiz._id)
+    .subscribe(
+      data =>
+        {
+          if (data['msg'])
+            { this.msg = data['msg']; this.avail = true; return; }
+          this.router.navigate(['/teacher/uploadquiz']);
+        },
+      error => { this.router.navigate(['/error']); }
+    )
+  }
+
   delete(quiz) {
     this.teacherService.deletequiz(quiz._id)
       .subscribe(
@@ -69,6 +90,6 @@ export class HomeComponent implements OnInit {
         }
 
 
-      )
+      );
   }
 }

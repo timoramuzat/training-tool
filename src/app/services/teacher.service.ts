@@ -54,6 +54,14 @@ export class TeacherService {
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });
   }
+
+  downloadquiz(body) {
+    return this.http.post(this.baseUri + "downloadquiz", { id: body }, {
+      observe: 'body',
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    });
+  }
+
   addQuestion(body) {
     return this.http.post(this.baseUri + "addquestion", body, {
       observe: 'body',

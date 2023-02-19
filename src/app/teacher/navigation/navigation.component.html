@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container-fluid">
   <div class="header">
 
     <img class="logo" src="./assets/img/stegaware_logo.png" />
@@ -18,8 +18,8 @@
        <a [routerLink]="['/teacher/allstudents']" class="nav-link"><span class="ec ec-couple"></span> Users</a>
     </div>
     <div class="header-icons">
-      <a   [routerLink]="['/student/home']"  class="nav-link" ><i class="fa-solid fa-user"></i> {{username}}</a>
-      <a [routerLink]="['/']" class="nav-link" (click)="logoutuser()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+      <a> <i class="fa-solid fa-user"></i> {{username}}</a>
+      <a  [routerLink]="['/']" class="nav-link" (click)="logoutuser()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
     </div>
   </div>
 </div>

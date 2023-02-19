@@ -5,6 +5,9 @@
     <app-loading></app-loading>
   </ng-template>
   <ng-template #myelseBlock>
+    <div class="title">
+      <h4>List of users</h4>
+    </div>
     <div *ngIf="empty; else elseBlock">
       <div style="margin-top: 50px;" class="d-flex justify-content-center">
         <div class="row">
@@ -21,31 +24,24 @@
       </div>
     </div>
     <ng-template #elseBlock>
-      <table class="table table-hover w-550" style="border-top: 2px solid white;"
-      >
-        <thead>
-          <tr>
-            <th scope="col"><p class="main-content__title">id</p></th>
-            <th scope="col"><p class="main-content__title">Username</p></th>
-            <th scope="col"><p class="main-content__title"><p class="main-content__title">Score</p></th>
-            <th scope="col"><p class="main-content__title"><p class="main-content__title">Delete</p></th>
-
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users;index as i">
-            <th scope="row">{{i+1}}</th>
-            <td>{{user.username}}</td>
-            <td>{{user.score}}</td>
-            <td>             <button class="btn btn-link" [disabled]="user.blocked" (click)="delete(user)"><i class="fa fa-ban"
-                                                                                                             aria-hidden="true"></i></button></td>
-
-
-
-          </tr>
-
-        </tbody>
-      </table>
+          <table class="table" style="text-align: center; vertical-align: middle">
+            <thead>
+              <tr>
+                <th style="width: 4%" scope="col"><p class="main-content__title">id</p></th>
+                <th style="width: 20%; text-align: left" scope="col"><p class="main-content__title">Username</p></th>
+                <th style="width: 68%; text-align: left" scope="col"><p class="main-content__title"><p class="main-content__title">Score</p></th>
+                <th style="width: 8%" scope="col"><p class="main-content__title"><p class="main-content__title">Delete</p></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users;index as i">
+                <th scope="row">{{i+1}}</th>
+                <td style="text-align: left">{{user.username}}</td>
+                <td style="text-align: left">{{user.score}}</td>
+                <td><button style="scale: 0.85" class="btn btn-danger btn-link" [disabled]="user.blocked" (click)="delete(user)">
+                    <i class="fa fa-ban" aria-hidden="true"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
     </ng-template>
   </ng-template>

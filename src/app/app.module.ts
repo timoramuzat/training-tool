@@ -27,6 +27,7 @@ import { ServerComponent } from './error/server/server.component';
 import { LoadingComponent } from './loading/loading/loading.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuizComponent } from './student/quiz/quiz.component';
+import { FeedbackComponent } from './student/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { QuizComponent } from './student/quiz/quiz.component';
     ServerComponent,
     LoadingComponent,
     MessagesComponent,
-    QuizComponent
+    QuizComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

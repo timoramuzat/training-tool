@@ -1,20 +1,18 @@
 <app-teachernav></app-teachernav>
 
-<div class="container mt-5">
-  <form #f="ngForm" (ngSubmit)="createQuiz(f)">
-
-
-
-
+<div>
+  <div class="title">
+    <h4>Create a new quiz</h4>
+  </div>
+  <form class="container" #f="ngForm" (ngSubmit)="createQuiz(f)">
     <div class="form-group">
-      <label for="quizname">Quizname</label>
+      <label class="mb-1" for="quizname">Quizname</label>
       <input type="text" name="quizname" class="form-control" autocomplete="off" id="quizname" ngModel required #quizname="ngModel">
     </div>
 
 
-
-    <div class="form-group">
-      <label for="description">Description</label>
+    <div class="form-group mt-2">
+      <label class="mb-1" for="description">Description</label>
       <input type="text" class="form-control" autocomplete="off" name="description" id="description" ngModel required
         #description="ngModel">
     </div>
@@ -22,7 +20,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Create</button>
+    <button type="submit" class="btn" [disabled]="f.invalid">Create</button>
   </form>
   <p class="social-text" style="color: red;font-weight: bold;font-size: 20px;" *ngIf="avail">{{msg}}</p>
 </div>

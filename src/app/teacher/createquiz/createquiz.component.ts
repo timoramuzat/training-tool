@@ -17,7 +17,8 @@ export class CreatequizComponent implements OnInit {
   }
 
   createQuiz(f: NgForm) {
-
+    console.log(f.value);
+    console.log(JSON.stringify(f.value));
     this.teacherService.createQuiz(JSON.stringify(f.value))
       .subscribe(
         data => {

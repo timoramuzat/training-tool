@@ -4,8 +4,11 @@
   <app-loading></app-loading>
 </ng-template>
 <ng-template #myelseBlock>
+  <div class="title">
+    <h4>List of all available quizzes</h4>
+  </div>
   <div *ngIf="empty; else elseBlock">
-    <div class="container mt-sm-5 my-1">
+    <div class="container-fluid">
     <div style="margin-top: 50px;" class="d-flex justify-content-center">
       <div class="row">
         <div class="col-6">
@@ -20,19 +23,17 @@
   </div>
 
   <ng-template #elseBlock>
-    <div class="container mt-sm-5 my-1">
-      <div class="bg-white p-3 border-bottom">
+    <div class="container-fluid">
         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-      <div class="row">
-        <div class="col-12">
-          <table class="table table-image">
+
+          <table class="table">
             <thead>
               <tr>
-                <th scope="col">id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Creator</th>
-                <th scope="col">Questions</th>
+                <th style="width: 4%" scope="col">id</th>
+                <th style="width: 20%" scope="col">Name</th>
+                <th style="width: 53%" scope="col">Description</th>
+                <th style="width: 15%"scope="col">Creator</th>
+                <th style="width: 8%"scope="col">Play Quiz</th>
 
               </tr>
             </thead>
@@ -44,15 +45,12 @@
                 <td>{{item.quizdescription}}</td>
                 <td>{{item.owneremail}}</td>
                 <td>
-                  <button (click)="playquiz(item)" class="btn btn-light">Play Quiz</button>
+                  <button (click)="playquiz(item)" class="btn btn-primary"><i class="fa-sharp fa-solid fa-play"></i></button>
                 </td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
           </div>
-      </div>
     </div>
   </ng-template>
 </ng-template>
