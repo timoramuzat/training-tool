@@ -109,6 +109,29 @@ exports.uploadQuiz = (req, res) => {
 
 }
 
+exports.downloadQuiz = (req, res) => {
+    console.log(req.body);
+    Question.find({ quizid: req.body.id }, (err, qz) => {
+        if (err) {
+            res.json({ msg: "Error!" });
+        }
+        else {
+            console.log(qz.length);
+            Quiz.updateOne({ _id: req.body.id }, { upload: false }, function (err, user) {
+                if (err) {
+                    console.log(err)
+                    res.json({ msg: "Error!" })
+                }
+                else {
+                    const io = req.app.get('io');
+                    io.emit("quizcrud", "Quiz");
+                    res.json({ message: "Quiz deactivated" });
+                }
+            })
+        }
+    })
+}
+
 exports.deleteQuiz = (req, res) => {
     var id = req.params.id
     // console.log(req.params.id);
