@@ -29,9 +29,6 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/app.js"
-            ],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
