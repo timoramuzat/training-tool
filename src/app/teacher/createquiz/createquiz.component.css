@@ -552,7 +552,11 @@ a:hover
 }
 
 .title {
-  padding-left: 60px;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding-left: 90px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+.container {
+  padding-left: 90px;
 }

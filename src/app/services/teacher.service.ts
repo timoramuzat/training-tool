@@ -25,8 +25,8 @@ export class TeacherService {
     return this.http.get(this.baseUri + "getuploadquiz", { headers: this.headers });
   }
 
-  gethomequiz() {
-    return this.http.get(this.baseUri + "gethomequiz", { headers: this.headers });
+  getallquiz() {
+    return this.http.get(this.baseUri + "getallquiz", { headers: this.headers });
   }
 
   seestudent() {

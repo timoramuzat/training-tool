@@ -4,7 +4,7 @@
   padding-right: 5px;
   box-sizing: border-box;
   border-collapse:separate;
-  border-spacing: 50px 5px;
+  border-spacing: 30px 0px;
 }
 
 body,
@@ -213,13 +213,25 @@ a:hover
   background: #DBDDDD;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 0px 0;
   cursor: pointer;
   transition: 0.5s;
 }
 
+.btn-danger {
+  background: #df4759;
+}
+
 .btn-primary {
-  background: #c0c0c0;
+  background: #0275d8;
+}
+
+.btn-succes {
+  background: #5cb85c;
+}
+
+.btn-warning {
+  background: #f0ad4e;
 }
 
 .btn:hover {
@@ -558,7 +570,12 @@ a:hover
 }
 
 .title {
-  padding-left: 60px;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding-left: 90px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+.table {
+  padding-left: 50px;
+  padding-right: 100px;
 }

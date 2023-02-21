@@ -21,8 +21,10 @@ export class HomeComponent implements OnInit {
     this.getdata();
   }
 
+
+
   getdata() {
-    this.teacherService.gethomequiz()
+    this.teacherService.getallquiz()
       .subscribe(
         data => {
           if (data['quiz']) {
@@ -60,17 +62,34 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/teacher/addquestion']);
   }
 
+  upload(quiz) {
+    this.teacherService.uploadquiz(quiz._id)
+      .subscribe(
+        data => {
+          if (data['msg']) {
+            this.msg = data['msg'];
+
+            this.avail = true;
+            return;
+          }
+          if (data['message']) { window.location.reload() }
+          else {
+            this.msg = "something went wrong!!";
+            this.avail = true;
+            return;
+          }
+        },
+        error => { this.router.navigate(['/error']); }
+      )
+  }
+
   download(quiz) {
-      // console.log("upload");
-      // console.log(quiz);
-      // console.log(quiz._id);
     this.teacherService.downloadquiz(quiz._id)
     .subscribe(
       data =>
         {
-          if (data['msg'])
-            { this.msg = data['msg']; this.avail = true; return; }
-          this.router.navigate(['/teacher/uploadquiz']);
+          if (data['msg']) { this.msg = data['msg']; this.avail = true; return; };
+          window.location.reload();
         },
       error => { this.router.navigate(['/error']); }
     )
@@ -92,4 +111,5 @@ export class HomeComponent implements OnInit {
 
       );
   }
+
 }

@@ -37,7 +37,7 @@ export class AddquestionComponent implements OnInit {
     this.options.push({optionValue: '3',optionText:f.controls.optionC.value});
     this.options.push({optionValue: '4',optionText:f.controls.optionD.value});
     // console.log(this.options);
-    this.obj = {quizid:this.quizid,options:this.options,questionText:f.controls.questionText.value,answer:f.controls.answer.value}
+    this.obj = {quizid:this.quizid,questionType:f.controls.questionType.value,options:this.options,questionText:f.controls.questionText.value,answer:f.controls.answer.value}
     // console.log(this.obj);
     this.teacherService.addQuestion(this.obj)
       .subscribe(

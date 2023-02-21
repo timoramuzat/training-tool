@@ -307,7 +307,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 145px;
+  width: 160px;
 }
 
 .quiz_box header .timer .time_left_txt{
@@ -320,7 +320,7 @@ body{
   font-size: 18px;
   font-weight: 500;
   height: 30px;
-  width: 45px;
+  width: 60px;
   color: #fff;
   border-radius: 5px;
   line-height: 30px;
@@ -424,6 +424,10 @@ footer{
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid lightgrey;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 0 0 15px 15px;
 }
 
 footer .total_que span{
@@ -555,23 +559,30 @@ footer button.show{
 }
 
 .btn {
-  width: 150px;
+  width: 70px;
   border: none;
   outline: none;
-  height: 49px;
+  height: 40px;
   border-radius: 49px;
   color: #fff;
-  text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 10px;
   cursor: pointer;
   transition: 0.5s;
-
-
 }
 
 .btn:hover {
   background-color: #020b18;
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.progress {
+  margin-left: 11px;
+  margin-right: 11px;
+  margin-top: 13px;
+}
+
+.bttns {
+  float: center;
 }

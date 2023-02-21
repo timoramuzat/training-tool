@@ -27,7 +27,7 @@ export class Home implements OnInit {
   }
 
   getdata() {
-    this.studentService.getAllQuiz()
+    this.studentService.getAllTrainingQuiz()
       .subscribe(
         data => {
           if (data['quiz']) {

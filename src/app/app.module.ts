@@ -18,7 +18,6 @@ import { TeachernavComponent } from './teacher/navigation/navigation.component';
 import { StudentnavComponent } from './student/navigation/navigation.component';
 import { Home } from './student/home/home.component';
 import { CreatequizComponent } from './teacher/createquiz/createquiz.component';
-import { UploadquizComponent } from './teacher/uploadquiz/uploadquiz.component';
 import { AllstudentsComponent } from './teacher/allstudents/allstudents.component';
 import { AddquestionComponent } from './teacher/addquestion/addquestion.component';
 import { QuestionsComponent } from './teacher/questions/questions.component';
@@ -28,6 +27,7 @@ import { LoadingComponent } from './loading/loading/loading.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuizComponent } from './student/quiz/quiz.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
+import { TestComponent } from './student/test/test.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,6 @@ import { FeedbackComponent } from './student/feedback/feedback.component';
     StudentnavComponent,
     Home,
     CreatequizComponent,
-    UploadquizComponent,
     AllstudentsComponent,
     AddquestionComponent,
     QuestionsComponent,
@@ -50,7 +49,8 @@ import { FeedbackComponent } from './student/feedback/feedback.component';
     LoadingComponent,
     MessagesComponent,
     QuizComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

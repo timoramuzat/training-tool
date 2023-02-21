@@ -6,6 +6,14 @@
 
 
     <div class="form-group">
+      <label for="questionType">Question Type</label>
+      <select class="form-control" name="questionType" id="questionType" ngModel required #questionType="ngModel">
+        <option value="Multiple-Choice">Multiple-Choice</option>
+        <option value="Fill in the blank">Fill in the blank</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="questionText">Question Text</label>
       <input type="text" name="questionText" class="form-control" autocomplete="off" id="questionText" ngModel required
         #questionText="ngModel">

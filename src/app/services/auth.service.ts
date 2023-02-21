@@ -14,8 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   registerStudent(body: any) {
-    return this.http.post('https://training-tool-backend-production.up.railway.app/registerstudent' +
-      '', body, {
+    return this.http.post('https://training-tool-backend-production.up.railway.app/registerstudent', body, {
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });

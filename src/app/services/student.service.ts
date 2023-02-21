@@ -18,8 +18,12 @@ export class StudentService {
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
-  getAllQuiz() {
-    return this.http.get(this.baseUri + "quiz", { headers: this.headers });
+  getAllTrainingQuiz() {
+    return this.http.get(this.baseUri + "training", { headers: this.headers });
+  }
+
+  getAllTestQuiz() {
+    return this.http.get(this.baseUri + "test", { headers: this.headers });
   }
 
   getUsername() {

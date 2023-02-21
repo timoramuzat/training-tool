@@ -16,31 +16,31 @@ export class QuizComponent implements OnInit {
   allQuestions: any;
   public loading: any = true;
   solutionArray: any[] = [];
-  ansOfOneQuestion: any[] = [];
-  ansKey: any[] = [];
-  time: any = 20;
+  currentAnswer: any[] = [];
+  answerKeys: any[] = [];
+  time: number = 600;
+  minutes: string = "10";
+  seconds: string = "00";
 
-  timePerQuestion: any;
   interval: any;
   temp: any;
   score: any = 0;
   flageLast: any = false;
   totalQuestion: any;
-  questionCounter: any = 1;
+  questionCounter: any = 0;
   answerCorrect: number[] = [];
-
+  progress: string = "0";
+  questionAnswered: any[] = [];
   totalScore: number[] = [];
   finishflag: any = false;
   finalsubmit: boolean = false;
-  // submitAvail:any = true;
-  oneQuestion: any;
+  currentQuestion: any;
   load: any;
   empty: boolean;
 
   myurl: any
   private users: any;
   constructor(private studentService: StudentService, private authService: AuthService, private router: Router) { }
-
 
   ngOnInit(): void {
     // this.toggleFullScreen(document.body)
@@ -49,17 +49,12 @@ export class QuizComponent implements OnInit {
       this.router.navigate(['/student/home']);
     }
     else {
-
       this.quizid = this.studentService.getQuizId();
-
       this.quizname = this.studentService.getQuizName();
       this.getAllQuestions(this.quizid)
       this.myurl = this.router.url;
       this.loading = true;
       this.empty = false;
-
-
-
     }
   }
 
@@ -68,27 +63,15 @@ export class QuizComponent implements OnInit {
       .subscribe(
         data => {
           if (data['user']) {
-
-
             this.users = data['user']
             this.loading = false
-            if (!this.users.length) {
-              this.empty = true;
-            }
-            else {
-              this.empty = false;
-            }
+            if (!this.users.length) { this.empty = true }
+            else { this.empty = false }
           }
         },
-        error => {
-          this.router.navigate(['/error']);
-        }
-
-
+        error => { this.router.navigate(['/error']) }
       )
-
   }
-
 
   getAllQuestions(quizid) {
     this.studentService.getAllQuestion(quizid)
@@ -99,28 +82,17 @@ export class QuizComponent implements OnInit {
             this.allQuestions = data['msg']
             this.createAns();
             this.shuffleQuestion();
-            this.timePerQuestion = this.time;
             this.totalQuestion = this.allQuestions.length;
-            this.oneQuestion = this.allQuestions[0];
+            this.currentQuestion = this.allQuestions[0];
             this.countdown();
           }
-
-          // console.log(this.allQuestions);
-
         },
-        error => {
-          this.router.navigate(['/error']);
-        }
-
-
+        error => { this.router.navigate(['/error']) }
       )
   }
 
-
-
   shuffleQuestion() {
     var m = this.allQuestions.length, t, i;
-
     while (m) {
       i = Math.floor(Math.random() * m--);
       t = this.allQuestions[m];
@@ -140,125 +112,85 @@ export class QuizComponent implements OnInit {
         x[m] = x[j];
         x[j] = t;
       }
-
     }
   }
-
-
 
   createAns() {
     for (let index = 0; index < this.allQuestions.length; index++) {
       const id = this.allQuestions[index].questionId;
       const ans = this.allQuestions[index].answer;
-      this.ansKey.push({ qid: id, ans: ans });
-
-
+      this.answerKeys.push({ qid: id, ans: ans });
     }
-    // console.log("key");
-    // console.log(this.ansKey);
   }
+
   private countdown() {
-
     this.interval = setInterval(() => {
-      if (this.timePerQuestion > 0) {
-        this.timePerQuestion--;
-      }
-      if (this.timePerQuestion == 0) {
-        // reset
-        if (this.questionCounter + 1 <= this.totalQuestion) {
-          this.oneQuestion = this.allQuestions[this.questionCounter];
-          this.questionCounter++;
-          if (this.questionCounter == this.totalQuestion) {
-            this.flageLast = true;
-          }
-          this.timePerQuestion = this.time;
-          // console.log("reset timer");
+      if (this.time > 0) {
+        if (this.seconds == "00") {
+            this.minutes = (parseInt(this.minutes) - 1).toString();
         }
+        if (this.seconds == "00") { this.seconds = "59"}
         else {
-          // this.router.navigate(['/']);
-          this.myStopFunction(this.interval);
-          // localStorage.removeItem('load');
-          // console.log("timeout");
-          this.finalsubmit = true;
+          var seconds = (parseInt(this.seconds) - 1);
+          if (seconds < 10) {
+            this.seconds = "0" + seconds.toString();
+          }
+          else {
+            this.seconds = seconds.toString();
+          }
         }
-
+        this.time--;
+      }
+      if (this.time == 0) {
+          clearInterval(this.interval);
+          this.finalsubmit = true;
       }
     }, 1000);
-
-    // console.log("hloo");
   }
 
-  myStopFunction(a) {
-    clearInterval(a);
+  previousQuestion() {
+    this.questionCounter--;
+    this.currentQuestion = this.allQuestions[this.questionCounter];
   }
 
   nextQuestion() {
-    if (this.ansOfOneQuestion) {
-
-alert("haha");
-    }
-    if (this.questionCounter != this.totalQuestion) {
-      this.getScore();
-      this.questionCounter++;
-
-      if (this.questionCounter == this.totalQuestion) {
-        this.flageLast = true;
-
-      }
-      this.oneQuestion = this.allQuestions[this.questionCounter - 1];
-
-
-      this.timePerQuestion = this.time;
-
-    }
-    if (this.questionCounter > this.totalQuestion) {
-      this.myStopFunction(this.interval);
-      this.oneQuestion = this.allQuestions[this.questionCounter - 1];
-    }
-
+    this.questionCounter++;
+    this.currentQuestion = this.allQuestions[this.questionCounter];
   }
-  navigatehome() {
 
-    this.router.navigate(['/student/home']);
-  }
+  navigatehome() { this.router.navigate(['/student/home']) }
 
   answer(qid, ans) {
-    this.temp = this.ansOfOneQuestion.pop()
-    if (this.temp) {
-      if (this.temp.qid != qid) {
-        this.ansOfOneQuestion.push(this.temp);
-
-      }
+    if (!this.questionAnswered.includes(qid)) {
+        this.questionAnswered.push(qid);
+        this.progress = ((this.questionAnswered.length / this.totalQuestion) * 100).toString();
     }
-    this.ansOfOneQuestion.push({ qid: qid, ans: ans });
+    this.temp = this.currentAnswer.pop()
+    if (this.temp) {
+      if (this.temp.qid != qid) { this.currentAnswer.push(this.temp); }
+    }
+    this.currentAnswer.push({ qid: qid, ans: ans });
   }
 
   getScore() {
-    for (let i = 0; i < this.ansOfOneQuestion.length; i++) {
-      for (let j = 0; j < this.ansKey.length; j++) {
-        if (this.ansOfOneQuestion[i].qid == this.ansKey[j].qid) {
-          if (this.ansOfOneQuestion[i].ans == this.ansKey[j].ans) {
+    for (let i = 0; i < this.currentAnswer.length; i++) {
+      for (let j = 0; j < this.answerKeys.length; j++) {
+        if (this.currentAnswer[i].qid == this.answerKeys[j].qid) {
+          if (this.currentAnswer[i].ans == this.answerKeys[j].ans) {
             this.score++;
             this.answerCorrect.push(i);
           }
         }
       }
     }
-
   }
 
   submitQuiz() {
     this.getScore();
-
-            this.totalScore.push(this.score);
-
+    this.totalScore.push(this.score);
     this.finalsubmit = true;
-    // localStorage.removeItem('load');
-    this.myStopFunction(this.interval);
+    clearInterval(this.interval);
   }
-
-
-
 
 }
 

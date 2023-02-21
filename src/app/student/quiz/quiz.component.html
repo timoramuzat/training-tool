@@ -5,39 +5,45 @@
   <app-loading></app-loading>
 </ng-template>
 <ng-template #myelseBlock>
-  <div class="container mx-auto">
-    <div class="quiz_box activeQuiz">
+  <div class="container mx-auto mt-4">
+    <div class="quiz_box activeQuiz" style="">
       <header>
         <div class="title">{{quizname}}</div>
         <div class="timer">
           <div class="time_left_txt">Time Left</div>
-          <div class="timer_sec">{{timePerQuestion}}</div>
+          <div class="timer_sec">{{minutes}}:{{seconds}}</div>
         </div>
-        <div class="time_line" style="width: 385px;"></div>
       </header>
+
+      <!--PROGRESS BAR-->
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':progress+'%'}"
+             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
       <section>
-        <div class="que_text" [innerHTML]="oneQuestion.questionText"></div>
+        <div class="que_text" [innerHTML]="currentQuestion.questionText"></div>
         <div class="option_list" id="options"
-             *ngFor="let user of oneQuestion.options;index as i">
+             *ngFor="let user of currentQuestion.options;index as i">
 
           <label class="options">{{user.optionText}}<input type="radio" value="{{user.optionValue}}" name="option"
-                                                           (change)="answer(oneQuestion.questionId,user.optionValue)"> <span class="checkmark"></span> </label>
+                                                           (change)="answer(currentQuestion.questionId,user.optionValue)"> <span class="checkmark"></span> </label>
         </div>
       </section>
 
-
+      <div class="bttns mb-2" style="align-items: center; border: solid" *ngIf="!finalsubmit">
+        <div class="btn"> <button class="btn btn-primary" [disabled]="questionCounter == 0" (click)="previousQuestion()">
+          <i class="fa-sharp fa-solid fa-chevron-left"></i></button> </div>
+        <div *ngIf="questionCounter != allQuestions.length-1" class="btn"> <button class="btn btn-primary" (click)="nextQuestion()">
+          <i class="fa-sharp fa-solid fa-chevron-right"></i></button> </div>
+        <div  *ngIf="questionCounter == allQuestions.length-1" class="btn"> <button class="btn btn-success" data-toggle="modal"
+                                                             data-target="#myModal" (click)="submitQuiz()">Submit</button> </div>
+      </div>
       <footer>
-        <div class="total_que">({{questionCounter}} of {{totalQuestion}}) </div>
+        <div class="total_que">({{questionCounter+1}} of {{totalQuestion}}) </div>
 
       </footer>
-      <div class="d-flex align-items pt-3" style=""
-           *ngIf="!finalsubmit">
-        <div class="timer">sss</div>
-        <div class="next_btn"> <button class="btn btn-primary" [disabled]="flageLast"
-                                                (click)="nextQuestion()">Next</button> </div>
-        <div  *ngIf="flageLast" class="clsbtnright"> <button class="btn btn-success" [disabled]="!flageLast" data-toggle="modal"
-                                                 data-target="#myModal" (click)="submitQuiz()">Submit</button> </div>
-      </div>
+
     </div>
 
     <h4 *ngIf="finalsubmit">You have scored {{score}}/{{totalQuestion}}</h4>
@@ -73,7 +79,7 @@ Reward for score: 0
                   "CORRECT"
                 </ng-container> <b>{{j+1}} - <div [innerHTML]="one.questionText"></div></b></div>
 
-                <ng-container *ngFor="let user of oneQuestion.options;index as i">
+                <ng-container *ngFor="let user of currentQuestion.options;index as i">
 
                   {{user.optionText}}
 
